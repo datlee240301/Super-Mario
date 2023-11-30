@@ -20,14 +20,12 @@ public class SavePoint : MonoBehaviour
     }
 
     public void Save() {
-        PlayerPrefs.SetInt(key_score, Mario.Instance.points);
         PlayerPrefs.SetString(key_score, Mario.Instance.PoinText.text);
         Debug.Log("save");
     }
 
     public void Load() {
         // Lấy giá trị điểm đã lưu từ PlayerPrefs
-        PlayerPrefs.GetInt(key_score);
         PlayerPrefs.GetString(key_score, Mario.Instance.PoinText.text);
         Mario.Instance.PoinText.text = PlayerPrefs.GetString(key_score);
         Debug.Log("load");
